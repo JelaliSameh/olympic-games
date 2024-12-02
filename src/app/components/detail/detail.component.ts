@@ -30,7 +30,10 @@ export class DetailComponent implements OnInit, OnDestroy {
       },
     ],
   };
-
+  public chartOptions: any = {
+    responsive: true,
+    maintainAspectRatio: false,
+  };
   private subscription: Subscription = new Subscription();
   participation: any;
 countries: any;
