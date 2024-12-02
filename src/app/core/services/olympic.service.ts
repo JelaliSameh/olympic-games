@@ -1,31 +1,42 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { Country } from '../models/Olympic';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OlympicService {
-  private olympicUrl = './assets/mock/olympic.json';
-  private olympics$ = new BehaviorSubject<any>(undefined);
+  private olympicUrl = './assets/mock/olympic.json'; // URL du fichier JSON
+  private olympics$ = new BehaviorSubject<Country[] | null>(null); // Gestion des données
 
   constructor(private http: HttpClient) {}
 
-  loadInitialData() {
-    return this.http.get<any>(this.olympicUrl).pipe(
-      tap((value) => this.olympics$.next(value)),
-      catchError((error, caught) => {
-        // TODO: improve error handling
-        console.error(error);
-        // can be useful to end loading state and let the user know something went wrong
-        this.olympics$.next(null);
-        return caught;
+  /**
+   * Charge les données olympiques initiales
+   */
+  loadInitialData(): Observable<any> {
+    return this.http.get<Country[]>(this.olympicUrl).pipe(
+      tap((data) => {
+        this.olympics$.next(data); // Met à jour le BehaviorSubject
+        console.log('Données chargées avec succès:', data);
+      }),
+      catchError((error) => {
+        console.error('Erreur lors du chargement des données:', error);
+        throw error;
       })
     );
   }
-
-  getOlympics() {
+  /**
+   * Retourne les données olympiques en tant qu'Observable
+   */
+  getOlympics(): Observable<Country[] | null> {
     return this.olympics$.asObservable();
   }
+  getCountries(): Observable<Country[]> {
+    return this.http.get<Country[]>(this.olympicUrl);
+  }
+  
+  
 }

@@ -1,0 +1,29 @@
+<div class="Medals">
+  <h1>Medals per Country</h1>
+</div>
+
+<div class="parent">
+  <!-- Nombre total de Jeux Olympiques -->
+  
+  <div class= "box">
+  Number of JOs<br>
+  <strong>{{ getTotalAthletesForAllCountries() }}</strong>
+  </div>
+  <!-- Nombre total de pays -->
+   
+   <div class= "box1">
+  Number of countries<br><strong>{{ countries.length }}</strong>
+</div>
+   </div>
+  
+
+  <!-- Graphique -->
+  <div class="chart-container">
+    <canvas
+      baseChart
+      [data]="pieChartData"
+      [type]="chartType"
+      (chartClick)="onChartClick($event)"
+    ></canvas>
+  </div>
+

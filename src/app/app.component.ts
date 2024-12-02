@@ -7,7 +7,9 @@ import { OlympicService } from './core/services/olympic.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit {  // Assurez-vous que 'AppComponent' est bien exporté
+  data: any[] = [];
+
   constructor(private olympicService: OlympicService) {}
 
   ngOnInit(): void {
