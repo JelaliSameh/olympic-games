@@ -3,9 +3,10 @@ import { take } from 'rxjs';
 import { OlympicService } from './core/services/olympic.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    standalone: false
 })
 export class AppComponent implements OnInit {  // Assurez-vous que 'AppComponent' est bien exporté
   data: any[] = [];

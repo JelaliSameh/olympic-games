@@ -8,11 +8,10 @@ import { Country } from 'src/app/core/models/Olympic';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css'],
-  imports: [NgChartsModule, CommonModule],
-  standalone: true,
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.css'],
+    imports: [NgChartsModule, CommonModule]
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   public chartType: ChartType = 'pie';
@@ -30,7 +29,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     responsive: true,
     maintainAspectRatio: false,
   };
-  
+
   private subscription: Subscription = new Subscription();
   loading: boolean = true;
   error: boolean = false;

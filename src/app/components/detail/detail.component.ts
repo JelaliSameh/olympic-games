@@ -8,11 +8,10 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 import { Country } from 'src/app/core/models/Olympic';
 
 @Component({
-  selector: 'app-detail',
-  standalone: true,
-  imports: [NgChartsModule, CommonModule],
-  templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.css']
+    selector: 'app-detail',
+    imports: [NgChartsModule, CommonModule],
+    templateUrl: './detail.component.html',
+    styleUrls: ['./detail.component.css']
 })
 export class DetailComponent implements OnInit, OnDestroy {
   loading = true;

@@ -1,0 +1,6 @@
+::ng-deep .star.star-full-icon{
+    content:'X';
+}
+::ng-deep .star.star-empty-icon{
+    content:'O';
+}
