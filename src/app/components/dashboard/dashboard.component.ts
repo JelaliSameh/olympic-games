@@ -12,7 +12,9 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.css'],
     standalone: true,
-    imports: [NgChartsModule, CommonModule,]
+    imports: [NgChartsModule, CommonModule ],
+   
+    
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   public chartType: ChartType = 'pie';
@@ -25,23 +27,22 @@ export class DashboardComponent implements OnInit, OnDestroy {
       },
     ],
   };
-  
   public chartOptions: any = {
     responsive: true,
-    maintainAspectRatio: false,
   };
 
-  private subscription: Subscription = new Subscription();
-  loading: boolean = true;
-  error: boolean = false;
-  jsonData: Country[] = [];
+private subscription: Subscription = new Subscription();
+loading: boolean = true;
+error: boolean = false;
+jsonData: Country[] = [];
 pieChartLabels: unknown[]|undefined;
 country: any;
   participation: any;
-
   constructor(private router: Router, private olympicService: OlympicService) {}
   countries: Country[] = [];
   totalCountries: number = 0;
+
+
   ngOnInit(): void {
     this.subscription.add(
       this.olympicService.getOlympics().subscribe({
@@ -77,7 +78,6 @@ country: any;
   prepareChartData(): void {
     const labels: string[] = [];
     const data: number[] = [];
-
     this.jsonData.forEach((country) => {
       const totalMedals = country.participations.reduce(
         (sum: any, participation: { medalsCount: any; }) => sum + participation.medalsCount,
@@ -101,24 +101,12 @@ country: any;
       this.router.navigate(['/detail', country]); // Navigation vers la page détail
     }
   }
-  getTotalAthletesForAllCountries(): number {
-    return this.countries.reduce(
-      (total, country) =>
-        total +
-        country.participations.reduce(
-          (sum, participation) => sum + participation.athleteCount,
-          0
-        ),
-      0
-    );
+
+  getCityCount(): number {
+    return new Set(this.countries.flatMap(country => country.participations.map(p => p.city))).size;
   }
   
-
-  getTotalAthletes(participations: any[]): number {
-    return participations.reduce((total, p) => total + p.athleteCount, 0);
-  }
   getTotalCountries(countries: Country[]): number {
     return countries.length;
   }
-
 }

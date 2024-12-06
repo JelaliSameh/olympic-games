@@ -3,6 +3,9 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { provideRouter, Routes } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { OlympicService } from './core/services/olympic.service';
+import { provideHttpClient } from '@angular/common/http';
+
 if (environment.production) {
   enableProdMode();
 }
@@ -14,5 +17,9 @@ export const routes: Routes = [
 ];
 
 bootstrapApplication(AppComponent, {
-  providers: [provideRouter(routes)]
+  providers: [
+    provideRouter(routes),
+    OlympicService,
+    provideHttpClient(), // Fournir HttpClientModule
+  ],
 }).catch(err => console.error(err));
