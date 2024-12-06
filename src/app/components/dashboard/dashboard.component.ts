@@ -11,7 +11,8 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
     styleUrls: ['./dashboard.component.css'],
-    imports: [NgChartsModule, CommonModule]
+    standalone: true,
+    imports: [NgChartsModule, CommonModule,]
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   public chartType: ChartType = 'pie';

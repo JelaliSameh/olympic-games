@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "olympic-games-starter": {
+    "olympic-games": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-           "outputPath": "dist/olympic-games-starter",
+           "outputPath": "dist/olympic-games",
             "baseHref": "/",
             "index": "src/index.html",
             "polyfills": [
@@ -31,6 +31,7 @@
             ],
             "styles": [
               "src/styles.css"
+              
             ],
             "scripts": [],
             "browser": "src/main.ts"
@@ -70,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "olympic-games-starter:build:production"
+              "buildTarget": "olympic-games:build:production"
             },
             "development": {
-              "buildTarget": "olympic-games-starter:build:development"
+              "buildTarget": "olympic-games:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "olympic-games-starter:build"
+            "buildTarget": "olympic-games:build"
           }
         },
         "test": {

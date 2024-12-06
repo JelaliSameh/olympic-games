@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { take } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { OlympicService } from './core/services/olympic.service';
+import { take } from 'rxjs';
+
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    standalone: false
+  selector: 'app-root',
+  standalone: true,
+  providers: [OlympicService],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  imports: [CommonModule, RouterModule]
 })
-export class AppComponent implements OnInit {  // Assurez-vous que 'AppComponent' est bien exporté
+export class AppComponent implements OnInit {
   data: any[] = [];
 
   constructor(private olympicService: OlympicService) {}
