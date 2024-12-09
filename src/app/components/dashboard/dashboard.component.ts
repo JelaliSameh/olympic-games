@@ -29,6 +29,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   };
   public chartOptions: any = {
     responsive: true,
+    maintainAspectRatio: false,
   };
 
 private subscription: Subscription = new Subscription();
