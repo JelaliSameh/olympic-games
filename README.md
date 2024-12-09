@@ -9,10 +9,10 @@ notamment les médailles par pays et les participations au fil des années.
 ## Installation
 
 1. Clonez le dépôt :
-   git clone https://github.com/OpenClassrooms-Student-Center/Developpez-le-front-end-en-utilisant-Angular.git
+   git clone https://github.com/JelaliSameh/olympic-games.git
 
 ##Naviguez dans le répertoire du projet :
-cd Developpez-le-front-end-en-utilisant-Angular
+cd olympic-games
 
 ##Installez les dépendances :
 npm install
