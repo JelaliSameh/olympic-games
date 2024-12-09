@@ -1,29 +1,60 @@
-# OlympicGamesStarter
+# Jeux Olympiques
+Une application Angular interactive permettant de visualiser les statistiques des Jeux Olympiques,
+notamment les médailles par pays et les participations au fil des années.
+## Fonctionnalités
+- Affichage des médailles par pays sous forme de graphique en camembert.
+- Navigation vers une vue détaillée pour chaque pays.
+- Graphique en ligne pour l'évolution des médailles d'un pays.
+- Données simulées chargées à partir d'un fichier JSON.
+## Installation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+1. Clonez le dépôt :
+   git clone https://github.com/OpenClassrooms-Student-Center/Developpez-le-front-end-en-utilisant-Angular.git
 
-Don't forget to install your node_modules before starting (`npm install`).
+##Naviguez dans le répertoire du projet :
+cd Developpez-le-front-end-en-utilisant-Angular
 
-## Development server
+##Installez les dépendances :
+npm install
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+##Lancez l'application :
+ng serve
 
-## Build
+##Accédez à l'application dans votre navigateur à l'adresse : http://localhost:4200
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### **Utilisation**
+- Accédez à la page d'accueil pour voir les médailles par pays.
+- Cliquez sur un segment du graphique pour explorer les détails d'un pays.
+- Visualisez les statistiques détaillées, telles que le nombre total de médailles, d'athlètes, et d'entrées.
+Structure du projet
+Ajoute une vue d'ensemble de l'architecture de ton projet :
 
-## Where to start
+## Structure du projet
+- `src/app/components/dashboard`: Composant pour le tableau de bord.
+- `src/app/components/detail`: Composant pour les détails d'un pays.
+- `src/app/core/services/olympic.service.ts`: Service pour gérer les données olympiques.
+- `assets/mock/olympic.json`: Fichier contenant les données simulées.
 
-As you can see, an architecture has already been defined for the project. It is just a suggestion, you can choose to use your own. The predefined architecture includes (in addition to the default angular architecture) the following:
+## Technologies utilisées
+- Angular
+- Chart.js via ng2-charts
+- TypeScript
+- RxJS
+- HTML5 / CSS3
 
-- `components` folder: contains every reusable components
-- `pages` folder: contains components used for routing
-- `core` folder: contains the business logic (`services` and `models` folders)
+## Contact
+Créé par Badri Sameh, email:jelali.sameh@gmail.com
 
-I suggest you to start by understanding this starter code. Pay an extra attention to the `app-routing.module.ts` and the `olympic.service.ts`.
+# Jeux Olympiques
 
-Once mastered, you should continue by creating the typescript interfaces inside the `models` folder. As you can see I already created two files corresponding to the data included inside the `olympic.json`. With your interfaces, improve the code by replacing every `any` by the corresponding interface.
+Une application Angular interactive permettant de visualiser les statistiques des Jeux Olympiques, notamment les médailles par pays et les participations au fil des années.
 
-You're now ready to implement the requested features.
+## Fonctionnalités
+- Affichage des médailles par pays sous forme de graphique en camembert.
+- Navigation vers une vue détaillée pour chaque pays.
+- Graphique en ligne pour l'évolution des médailles d'un pays.
+- Données simulées chargées à partir d'un fichier JSON.
 
-Good luck!
+
+
+
